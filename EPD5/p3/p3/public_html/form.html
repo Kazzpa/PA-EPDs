@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="form.html">Registro</a>
+            <a href="dates.html">Calendario de actividades</a>
+        </nav>
+        <div>
+            <form action=".">
+                <!-- 
+                Este evento sirve para que cuando usamos la barra el valor interno que tiene la barra se muestre visualmente con un numero.
+                Action es donde van a ir los datos, el punto "." indica que se envian a esta pagina web
+                Para asegurarse de que funciona en todas las paginas webs habria que comprobarlo en todas ellas que nuestra pagina funciona 
+                y se muestra correctamente
+                Si quiero crear un enlace que me lleve de una pagina local a otra pagina local creo una <a href="portada.html"> por ejemplo
+                y como esta en local y en la misma ruta en principio funciona
+                tambien se puede hacer con archivos y con url
+                fijarse bien en el fin de archivo
+                -->
+                <h1>Formulario de registro</h1>
+                <p>Plazas ocupadas
+                    <meter value="189" min="0" max="400">189 de 400</meter><br>
+                    Rellenando el siguiente formulario entrara a formar parte de la base de datos de nuestro club de lectura,
+                    enviamos a todos los miembros del boletion anuncios sobre ofertas, tanto de nuestra tienda como globales. Ademas si tienes
+                    alguna de las suscripciones que ofertamos te llegara informacion extra como conferencias de autores reconocidos.</p>
+                <label>Sexo</label><br>
+                <label>
+                    <input type="radio" name="title" value="mr">
+                    Hombre
+                </label>
+                <label>
+                    <input type="radio" name="title" value="mrs">
+                    Mujer
+                </label>
+                <p>
+                    <label>Nombre</label><br>
+                    <input type="text" name="first_name" required>
+                </p>
+                <p>
+                    <label>Apellido</label><br>
+                    <input type="text" name="last_name" required>
+                </p>
+                <p>
+                    <label>Email</label><br>
+                    <input type="email" name="email" required>
+                </p>
+                <p>
+                    <label>Numero de telefono</label><br>
+                    <input type="tel" name="phone">
+                </p>
+                <p>
+                    <label>Contraseña</label><br>
+                    <input type="password" name="password" required>
+                </p>
+                <p> <label>Universidad </label> <br />
+                    <input list="Universidad" name="Universidad">
+                    <datalist id="Universidad">
+                        <option value="Pablo de Olavide">
+                        <option value="Universidad de Sevilla">
+                    </datalist>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" value="terms" required>
+                        Acepto que esta información se recopile en la base de datos del club de lectura Pablo de Olavide.
+                    </label>
+                </p>
+                <br />
+                <input type="submit" value="Enviar" />  
+            </form>
+        </div>
+    </body>
+</html>

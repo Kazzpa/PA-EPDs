@@ -1,0 +1,59 @@
+Hemos intentado incluir todas las etiquetas, algunas no tenian mucho sentido en
+nuestro contexto por lo que han sido omitidas, no queriamos meter por meter
+Hemos verificado en w3c la pagina y el unico error que da esta relacionado con el borde de la tabla que nos dice que deberiamos definirla con css, el resto son warnings que hemos obviado porque no es algo que creemos que este mal
+
+Etiquetas que se han usado:
+
+<article> la presentacion de nuestro club
+
+<aside> para indicar el significado de ask me anything
+
+<bdi> no incluida
+
+<details> se ha usado para abrir un desplegable que muestra el "Copyright"
+
+<dialog> no incluida
+
+<figcaption> pie de foto en index
+
+<figure> para contener la misma foto donde usamos figcaption
+
+<footer> poner un pie de pagina con la informacion de quien lo ha hecho y el correo electronico
+
+<header> engloba el encabezado donde tenemos la foto del club, el copyright y el nombre
+
+<main> hemos contenido todo lo principal menos aquello que pueda irse repitiendo a traves de las paginas como los links de navegacion, la imagen del club...
+
+<mark> no la hemos incluido, en su defecto hemos usado strong
+
+<meter> para tener con un indicador visual las plazas libres que quedan en nuestro club
+
+<nav> los links de navegacion entre paginas
+
+<progress> no incluido
+
+<rp> <rt> y <ruby> no usados
+
+<section> para declarar la seccion article en el index
+
+<summary> le decimos a la etiqueta details la parte visible que queremos que se muestre
+
+<time> no usada
+
+<wbr> la hemos incluido solo una vez para una parte de la presentacion que nos gustaria que nunca se cortara al redimensionar la pantalla, solo la hemos introducido una vez
+
+<datalist> para hacer un despleagable con universidades, si no aparece la tuya puedes ponerla
+
+<output> no incluido
+
+<canvas> y <svg> no han sido incluidos
+
+<audio> para introducir una cancion 
+
+<embed> no hemos introducir una aplicacion externa, aunque podriamos haber incluido algo como un video de youtube
+
+<source> dentro de audio y video lo hemos usado para indicar desde donde se reproduce la informacion
+
+<track> no usada
+
+<video> para introducir un video

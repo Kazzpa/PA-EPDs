@@ -7,8 +7,8 @@
                 var size = 10;
                 while (i < size / 2) {
                     var j = 1;
-                    while(j < size){
-                        if(j%i == 0){
+                    while (j < size) {
+                        if (j % i == 0) {
                             document.write(j);
                         }
                         j++;
@@ -21,6 +21,8 @@
         </script>
     </head>
 
-    <body>
+    <body><footer>
+            <p>Posted by grupo 4:<br /> Javier Bermejo Torrent, Andr&eacute;s Carrillo Bejarano, Ander Lakidain de Arriba</p>
+        </footer>
     </body>
 </html>

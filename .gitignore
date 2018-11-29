@@ -1,2 +1,9 @@
 /EPD7/nbproject/private/
 /EPD7/p1/nbproject/private/
+/EPD8/EXPERIMENTOS/nbproject/private/
+**/nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

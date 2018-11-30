@@ -9,7 +9,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title>EPD7-P1</title>
         <script type="text/javascript">
-//<!--
+<!--
             function valida(str) {
                 var ini = str.indexOf("(");
                 var mid = str.indexOf(",");
@@ -83,7 +83,7 @@ and open the template in the editor.
     </head>
     <body>
         <script type="text/javascript">
-//<!--
+<!--
             //Cadena = "cad;op(a,b);opb(a,b)"
             cadena = prompt("Envia la operacion:", "");
             cadArr = cadena.split(";");

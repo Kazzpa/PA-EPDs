@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>EPD8-P4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        Captcha: 
+        <div id="captcha" onmouseenter="generaCaptcha()" onmouseout="escondeCaptcha()">Pase el raton por encima para el captcha<br/></div>
+        Introduzca el numero generado<input type="text" id="captchatext"><input value="comprobar" type="button" onclick="comprueba()"><br/>
+        Regenera numero captcha<input type="button" value ="Regenerar" onclick="regenera()">
+        <div id="comprobacion"></div>
+        <script type="text/javascript">
+            var hecho = false;
+            var num = null;
+            function generaCaptcha() {
+                var x = document.getElementById("captcha");
+                if (!hecho) {
+                    num = 0;
+                    for (i = 0; i < 4; i++) {
+                        num += Math.trunc(Math.random() * (9) + 1, 1) * (Math.pow(10, i));
+
+                    }
+                    hecho = true;
+                }
+                x.innerHTML = num;
+
+            }
+            function escondeCaptcha() {
+                var x = document.getElementById("captcha");
+                x.innerHTML = "Pase el raton por encima para el captcha";
+            }
+            function regenera() {
+                hecho = false;
+            }
+            function comprueba() {
+                var x = document.getElementById("captchatext");
+                var y = document.getElementById("comprobacion");
+                if (x.value == num) {
+                    y.textContent = "Correcto";
+                } else {
+
+                    y.textContent = "Incorrecto";
+                }
+            }
+        </script>
+    </body>
+</html>

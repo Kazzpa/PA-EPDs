@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>EPD8-P2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <input type="button" id="calcular" value="Realizar calculos" onclick="principal()">
+        <div id="Resultado"></div>
+
+        <footer>
+            <p>Posted by grupo 4:<br /> Javier Bermejo Torrent, Andr&eacute;s Carrillo Bejarano, Ander Lakidain de Arriba</p>
+        </footer>
+        <script type="text/javascript" >
+            //<!--
+            function principal() {
+                var boton = document.getElementById("calcular");
+                boton.disabled = true;
+                var res = document.getElementById("Resultado");
+                res.innerHTML = "Funciones javascript:</br>\n\
+                1.Número medio de palabras en parrafos: " + contarPalabrasMedia() + "<br/>\n\
+                2.Listado de textos alternativos de imagenes:<br/>" + textAlt() + "\n\
+                3.Mostrar dos primeros parrafos en negrita:<br/>" + negritaprimeros(2) +
+                        "4.Mostrar primera url del primer enlace: <br/>" + urlLink(1);
+            }
+            function contarPalabrasMedia() {
+                // seleccionamos todos los elementos de parrafo
+                var p = document.getElementsByTagName("P");
+
+                var suma = 0;
+
+                for (var i = 0; i < p.length; i++)
+                {
+                    suma += p[i].textContent.split(' ').length;
+                }
+                return suma;
+            }
+            function textAlt() {
+                // seleccionamos todos los elementos de tipo imagen
+                var img = document.getElementsByTagName("img");
+
+                var res = "";
+
+                for (var i = 0; i < img.length; i++)
+                {
+                    res += "Imagen numero " + i + ": " + img[i].alt + " <br/>";
+                }
+                return res;
+            }
+            function negritaprimeros(limite) {
+                //seleccionamos todos los parrafos
+                var parrafos = document.getElementsByTagName("p");
+                var result = "";
+                for (var i = 0; i < limite; i++)
+                {
+                    result += "<strong>" + parrafos[i].textContent + "</strong><br/>";
+                }
+                return result;
+            }
+            //Mostraremos los enlaces de los numLinks primeros
+            function urlLink(numLinks) {
+                var result = "";
+                var images = document.getElementsByTagName('a');
+                for (var i = 0; i < numLinks && numLinks <= images.length; i++)
+                {
+                    result += "URL numero " + i + ": " + images[i].href + "<br>";
+                }
+                return result;
+            }
+//-->
+        </script>
+
+        <!--Contenido de la pagina de latex https://en.wikibooks.org/wiki/LaTeX/Special_Characters -->
+        <br/><a href="https://en.wikibooks.org/wiki/LaTeX/Special_Characters"> origen html</a><br/>
+        <div id="mw-page-base" class="noprint"></div>
+        <div id="mw-head-base" class="noprint"></div>
+        <div id="content" class="mw-body" role="main">
+            <a id="top"></a>
+            <div id="siteNotice" class="mw-body-content"><!-- CentralNotice --></div><div class="mw-indicators mw-body-content">
+            </div>
+            <h1 id="firstHeading" class="firstHeading" lang="en">LaTeX/Special Characters</h1>			<div id="bodyContent" class="mw-body-content">
+                <div id="siteSub" class="noprint">From Wikibooks, open books for an open world</div>				<div id="contentSub"><span class="subpages">&lt; <a href="/wiki/LaTeX" title="LaTeX">LaTeX</a></span></div>
+                <div id="jump-to-nav"></div>				<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+                <a class="mw-jump-link" href="#p-search">Jump to search</a>
+                <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><table class="wikitable collapsible noprint" style="background-color: #efe; float: right; clear: right; border: 1px solid #8b8; padding: 0.5em; font-size: small; text-align: left; width: 20%; margin: 0.5em;">
+
+                            <tbody><tr>
+                                    <th>
+                                        <div class="floatright"><a href="/wiki/File:LaTeX_logo.svg" class="image"><img alt="LaTeX logo.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/60px-LaTeX_logo.svg.png" width="60" height="25" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/90px-LaTeX_logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/120px-LaTeX_logo.svg.png 2x" data-file-width="1200" data-file-height="500" /></a></div>
+                                        <p><a href="/wiki/LaTeX" title="LaTeX">LaTeX</a>
+                                        </p>
+                                    </th></tr>
+                                <tr>
+                                    <td>Getting Started
+                                        <ol><li><a href="/wiki/LaTeX/Introduction" title="LaTeX/Introduction">Introduction</a></li>
+                                            <li><a href="/wiki/LaTeX/Installation" title="LaTeX/Installation">Installation</a></li>
+                                            <li><a href="/wiki/LaTeX/Installing_Extra_Packages" title="LaTeX/Installing Extra Packages">Installing Extra Packages</a></li>
+                                            <li><a href="/wiki/LaTeX/Basics" title="LaTeX/Basics">Basics</a></li>
+                                            <li><a href="/wiki/LaTeX/How_to_get_help" title="LaTeX/How to get help">How to get help</a></li></ol>
+                                        <p>Common Elements
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/Document_Structure" title="LaTeX/Document Structure">Document Structure</a></li>
+                                            <li><a href="/wiki/LaTeX/Text_Formatting" title="LaTeX/Text Formatting">Text Formatting</a></li>
+                                            <li><a href="/wiki/LaTeX/Paragraph_Formatting" title="LaTeX/Paragraph Formatting">Paragraph Formatting</a></li>
+                                            <li><a href="/wiki/LaTeX/Colors" title="LaTeX/Colors">Colors</a></li>
+                                            <li><a href="/wiki/LaTeX/Fonts" title="LaTeX/Fonts">Fonts</a></li>
+                                            <li><a href="/wiki/LaTeX/List_Structures" title="LaTeX/List Structures">List Structures</a></li>
+                                            <li><a class="mw-selflink selflink">Special Characters</a></li>
+                                            <li><a href="/wiki/LaTeX/Internationalization" title="LaTeX/Internationalization">Internationalization</a></li>
+                                            <li><a href="/wiki/LaTeX/Rotations" title="LaTeX/Rotations">Rotations</a></li>
+                                            <li><a href="/wiki/LaTeX/Tables" title="LaTeX/Tables">Tables</a></li>
+                                            <li><a href="/wiki/LaTeX/Title_Creation" title="LaTeX/Title Creation">Title creation</a></li>
+                                            <li><a href="/wiki/LaTeX/Page_Layout" title="LaTeX/Page Layout">Page Layout</a></li>
+                                            <li><a href="/wiki/LaTeX/Customizing_Page_Headers_and_Footers" title="LaTeX/Customizing Page Headers and Footers">Customizing Page Headers and Footers‎</a></li>
+                                            <li><a href="/wiki/LaTeX/Importing_Graphics" title="LaTeX/Importing Graphics">Importing Graphics</a></li>
+                                            <li><a href="/wiki/LaTeX/Floats,_Figures_and_Captions" title="LaTeX/Floats, Figures and Captions">Floats, Figures and Captions</a></li>
+                                            <li><a href="/wiki/LaTeX/Footnotes_and_Margin_Notes" title="LaTeX/Footnotes and Margin Notes">Footnotes and Margin Notes</a></li>
+                                            <li><a href="/wiki/LaTeX/Hyperlinks" title="LaTeX/Hyperlinks">Hyperlinks</a></li>
+                                            <li><a href="/wiki/LaTeX/Labels_and_Cross-referencing" title="LaTeX/Labels and Cross-referencing">Labels and Cross-referencing</a></li>
+                                            <li><a href="/wiki/LaTeX/Initials" title="LaTeX/Initials">Initials</a></li></ol>
+                                        <p>Mechanics
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/Errors_and_Warnings" title="LaTeX/Errors and Warnings">Errors and Warnings</a></li>
+                                            <li><a href="/wiki/LaTeX/Lengths" title="LaTeX/Lengths">Lengths</a></li>
+                                            <li><a href="/wiki/LaTeX/Counters" title="LaTeX/Counters">Counters</a></li>
+                                            <li><a href="/wiki/LaTeX/Boxes" title="LaTeX/Boxes">Boxes</a></li>
+                                            <li><a href="/wiki/LaTeX/Rules_and_Struts" title="LaTeX/Rules and Struts">Rules and Struts</a></li></ol>
+                                        <p>Technical Texts
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/Mathematics" title="LaTeX/Mathematics">Mathematics</a></li>
+                                            <li><a href="/wiki/LaTeX/Advanced_Mathematics" title="LaTeX/Advanced Mathematics">Advanced Mathematics</a></li>
+                                            <li><a href="/wiki/LaTeX/Theorems" title="LaTeX/Theorems">Theorems</a></li>
+                                            <li><a href="/wiki/LaTeX/Chemical_Graphics" title="LaTeX/Chemical Graphics">Chemical Graphics</a></li>
+                                            <li><a href="/wiki/LaTeX/Algorithms" title="LaTeX/Algorithms">Algorithms</a></li>
+                                            <li><a href="/wiki/LaTeX/Source_Code_Listings" title="LaTeX/Source Code Listings">Source Code Listings</a></li>
+                                            <li><a href="/wiki/LaTeX/Linguistics" title="LaTeX/Linguistics">Linguistics</a></li></ol>
+                                        <p>Special Pages
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/Indexing" title="LaTeX/Indexing">Indexing</a></li>
+                                            <li><a href="/wiki/LaTeX/Glossary" title="LaTeX/Glossary">Glossary</a></li>
+                                            <li><a href="/wiki/LaTeX/Bibliography_Management" title="LaTeX/Bibliography Management">Bibliography Management</a></li>
+                                            <li><a href="/wiki/LaTeX/More_Bibliographies" title="LaTeX/More Bibliographies">More Bibliographies</a></li></ol>
+                                        <p>Special Documents
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/Scientific_Reports" title="LaTeX/Scientific Reports">Scientific Reports (Bachelor Report, Master Thesis, Dissertation)</a></li>
+                                            <li><a href="/wiki/LaTeX/Letters" title="LaTeX/Letters">Letters</a></li>
+                                            <li><a href="/wiki/LaTeX/Presentations" title="LaTeX/Presentations">Presentations</a></li>
+                                            <li><a href="/wiki/LaTeX/Teacher%27s_Corner" title="LaTeX/Teacher&#39;s Corner">Teacher's Corner</a></li>
+                                            <li><a href="/wiki/LaTeX/Curriculum_Vitae" title="LaTeX/Curriculum Vitae">Curriculum Vitae</a></li></ol>
+                                        <p>Creating Graphics
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/Introducing_Procedural_Graphics" title="LaTeX/Introducing Procedural Graphics">Introducing Procedural Graphics</a></li>
+                                            <li><a href="/wiki/LaTeX/MetaPost" title="LaTeX/MetaPost">MetaPost</a></li>
+                                            <li><a href="/wiki/LaTeX/Picture" title="LaTeX/Picture">Picture</a></li>
+                                            <li><a href="/wiki/LaTeX/PGF/TikZ" title="LaTeX/PGF/TikZ">PGF/TikZ</a></li>
+                                            <li><a href="/wiki/LaTeX/PSTricks" title="LaTeX/PSTricks">PSTricks</a></li>
+                                            <li><a href="/wiki/LaTeX/Xy-pic" title="LaTeX/Xy-pic">Xy-pic</a></li>
+                                            <li><a href="/wiki/LaTeX/Creating_3D_graphics" title="LaTeX/Creating 3D graphics">Creating 3D graphics</a></li></ol>
+                                        <p>Programming
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/Macros" title="LaTeX/Macros">Macros</a></li>
+                                            <li><a href="/wiki/LaTeX/Plain_TeX" title="LaTeX/Plain TeX">Plain TeX</a></li>
+                                            <li><a href="/wiki/LaTeX/Creating_Packages" title="LaTeX/Creating Packages">Creating Packages</a></li>
+                                            <li><a href="/wiki/LaTeX/Creating_Package_Documentation" title="LaTeX/Creating Package Documentation">Creating Package Documentation</a></li>
+                                            <li><a href="/wiki/LaTeX/Themes" title="LaTeX/Themes">Themes</a></li></ol>
+                                        <p>Miscellaneous
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/Modular_Documents" title="LaTeX/Modular Documents">Modular Documents</a></li>
+                                            <li><a href="/wiki/LaTeX/Collaborative_Writing_of_LaTeX_Documents" title="LaTeX/Collaborative Writing of LaTeX Documents">Collaborative Writing of LaTeX Documents</a></li>
+                                            <li><a href="/wiki/LaTeX/Export_To_Other_Formats" title="LaTeX/Export To Other Formats">Export To Other Formats</a></li></ol>
+                                        <p>Help and Recommendations
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/FAQ" title="LaTeX/FAQ">FAQ</a></li>
+                                            <li><a href="/wiki/LaTeX/Tips_and_Tricks" title="LaTeX/Tips and Tricks">Tips and Tricks</a></li></ol>
+                                        <p>Appendices
+                                        </p>
+                                        <ol><li><a href="/wiki/LaTeX/Authors" title="LaTeX/Authors">Authors</a></li>
+                                            <li><a href="/wiki/LaTeX/Links" title="LaTeX/Links">Links</a></li>
+                                            <li><a href="/wiki/LaTeX/Package_Reference" title="LaTeX/Package Reference">Package Reference</a></li>
+                                            <li><a href="/wiki/LaTeX/Sample_LaTeX_documents" title="LaTeX/Sample LaTeX documents">Sample LaTeX documents</a></li>
+                                            <li><a href="/wiki/LaTeX/Index" title="LaTeX/Index">Index</a></li>
+                                            <li><a href="/wiki/LaTeX/Command_Glossary" title="LaTeX/Command Glossary">Command Glossary</a></li></ol>
+                                    </td></tr>
+                                <tr>
+                                    <td>
+                                        <p><small><a class="external text" href="//en.wikibooks.org/w/index.php?title=Template:LaTeX/Top&amp;action=edit">edit this box</a> • <a class="external text" href="//en.wikibooks.org/w/index.php?title=Template:LaTeX/Contents&amp;action=edit">edit the TOC</a></small>
+                                        </p>
+                                    </td></tr></tbody></table>
+                        <table class="metadata plainlinks ambox ambox-notice" style="">
+                            <tbody><tr>
+                                    <td class="mbox-image"><div style="width: 52px;">
+                                            <img alt="Information" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/35/Information_icon.svg/32px-Information_icon.svg.png" title="Information" width="32" height="32" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/35/Information_icon.svg/48px-Information_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/35/Information_icon.svg/64px-Information_icon.svg.png 2x" data-file-width="620" data-file-height="620" /></div></td>
+                                    <td class="mbox-text" style=""> This chapter assumes you are using the <tt>latex</tt> or <tt>pdflatex</tt> engines and need to concern yourself with TeX's various encodings. <tt>lualatex</tt> and <tt>xelatex</tt>, on the other hand, accept <a href="https://en.wikipedia.org/wiki/Unicode" class="extiw" title="w:Unicode">Unicode</a> input and can usually typeset documents using the correct glyphs without further user intervention. See the <a href="/wiki/LaTeX/Fonts#Font_encoding" title="LaTeX/Fonts">Fonts</a> chapter's discussion of encoding for additional information. </td>
+                            </tr>
+                            </tbody></table>
+                        <p>In this chapter we will tackle matters related to input encoding, typesetting diacritics and special characters.
+                        </p><p>In the following document, we will refer to <i>special characters</i> for all symbols other than the lowercase letters a–z, uppercase letters A-Z, figures 0–9, and English punctuation marks.
+                        </p><p>Some languages usually need a dedicated input system to ease document writing. This is the case for Arabic, Chinese, Japanese, Korean and others. This specific matter will be tackled in <a href="/wiki/LaTeX/Internationalization" title="LaTeX/Internationalization">Internationalization</a>.
+                        </p><p>The rules for producing characters with diacritical marks, such as accents, differ somewhat depending whether you are in text mode, math mode, or the tabbing environment.
+                        </p>
+                        <div id="toc" class="toc"><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+                            <ul>
+                                <li class="toclevel-1 tocsection-1"><a href="#Input_encoding"><span class="tocnumber">1</span> <span class="toctext">Input encoding</span></a>
+                                    <ul>
+                                        <li class="toclevel-2 tocsection-2"><a href="#Extending_the_support"><span class="tocnumber">1.1</span> <span class="toctext">Extending the support</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="toclevel-1 tocsection-3"><a href="#Escaped_codes"><span class="tocnumber">2</span> <span class="toctext">Escaped codes</span></a></li>
+                                <li class="toclevel-1 tocsection-4"><a href="#Less_than_&lt;_and_greater_than_&gt;"><span class="tocnumber">3</span> <span class="toctext"><i>Less than &lt;</i> and <i>greater than &gt;</i></span></a></li>
+                                <li class="toclevel-1 tocsection-5"><a href="#Euro_€_currency_symbol"><span class="tocnumber">4</span> <span class="toctext">Euro € currency symbol</span></a></li>
+                                <li class="toclevel-1 tocsection-6"><a href="#Degree_symbol_for_temperature_and_math"><span class="tocnumber">5</span> <span class="toctext">Degree symbol for temperature and math</span></a></li>
+                                <li class="toclevel-1 tocsection-7"><a href="#Other_symbols"><span class="tocnumber">6</span> <span class="toctext">Other symbols</span></a></li>
+                                <li class="toclevel-1 tocsection-8"><a href="#In_special_environments"><span class="tocnumber">7</span> <span class="toctext">In special environments</span></a>
+                                    <ul>
+                                        <li class="toclevel-2 tocsection-9"><a href="#Math_mode"><span class="tocnumber">7.1</span> <span class="toctext">Math mode</span></a></li>
+                                        <li class="toclevel-2 tocsection-10"><a href="#Tabbing_environment"><span class="tocnumber">7.2</span> <span class="toctext">Tabbing environment</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="toclevel-1 tocsection-11"><a href="#Unicode_keyboard_input"><span class="tocnumber">8</span> <span class="toctext">Unicode keyboard input</span></a></li>
+                                <li class="toclevel-1 tocsection-12"><a href="#External_links"><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+                                <li class="toclevel-1 tocsection-13"><a href="#Notes_and_References"><span class="tocnumber">10</span> <span class="toctext">Notes and References</span></a></li>
+                            </ul>
+                        </div>
+
+                        <h2><span class="mw-headline" id="Input_encoding">Input encoding</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=1" title="Edit section: Input encoding">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                        <p>TeX uses ASCII by default. But 128 characters is not enough to support non-english languages. TeX has its own way to do that with commands for every diacritical marking (see <a href="#Escaped_codes">Escaped codes</a>). But if we want accents and other special characters to appear directly in the source file, we have to tell TeX that we want to use a different encoding.
+                        </p><p>There are several encodings available to LaTeX:
+                        </p>
+                        <ul><li>ASCII: the default. Only bare english characters are supported in the source file.</li>
+                            <li>ISO-8859-1 (a.k.a. Latin 1): 8-bits encoding. It supports most characters for latin languages, but that's it.</li>
+                            <li>UTF-8: a Unicode multi-byte encoding. Supports the complete Unicode specification.</li>
+                            <li>Others...</li></ul>
+                        <p>In the following we will assume you want to use UTF-8.
+                        </p><p>There are some <i>important steps</i> to specify encoding.
+                        </p>
+                        <ul><li>Make sure your text editor decodes the file in UTF-8.</li>
+                            <li>Make sure it saves your file in UTF-8. Most text editors do not make the distinction, but some do, such as Notepad++.</li>
+                            <li>If you are working in a terminal, make sure it is set to support UTF-8 input and output. Some old Unix terminals may not support UTF-8. <a href="https://en.wikipedia.org/wiki/PuTTY" class="extiw" title="w:PuTTY">PuTTY</a> is not set to use UTF-8 by default, you have to configure it.</li>
+                            <li>Tell LaTeX that the source file is UTF-8 encoded.</li></ul>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p><span style="font-family: monospace; color: #2020C0; font-weight: normal;">inputenc</span> <sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> package tells LaTeX what the text encoding format of your <tt>.tex</tt> files is.
+                        </p>
+                        <table class="metadata plainlinks ambox ambox-delete" style="">
+                            <tbody><tr>
+                                    <td class="mbox-image"><div style="width: 52px;">
+                                            <img alt="warning" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Nuvola_apps_important_yellow.svg/40px-Nuvola_apps_important_yellow.svg.png" width="40" height="33" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Nuvola_apps_important_yellow.svg/60px-Nuvola_apps_important_yellow.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Nuvola_apps_important_yellow.svg/80px-Nuvola_apps_important_yellow.svg.png 2x" data-file-width="600" data-file-height="500" /></div></td>
+                                    <td class="mbox-text" style=""> If you check the character encoding (<i>e.g.</i> using the Unix <tt>file</tt> command), be sure that your file contains at least one special character, otherwise it will be recognized as ASCII (which is logical since UTF-8 is a superset of ASCII). </td>
+                            </tr>
+                            </tbody></table>
+                        <p>The inputenc package allows as well the user to change the encoding <i>within the document</i> by means of the command <code class="mw-highlight" dir="ltr"><span class="k">\inputencoding</span><span class="nb">{</span>&#39;encoding name&#39;<span class="nb">}</span></code>.
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="c">% ...</span>
+<span class="c">% In this area</span>
+<span class="c">% The UTF-8 encoding is specified.</span>
+<span class="c">% ...</span>
+<span class="k">\inputencoding</span><span class="nb">{</span>latin1<span class="nb">}</span>
+<span class="c">% ...</span>
+<span class="c">% Here the text encoding is specified as ISO Latin-1.</span>
+<span class="c">% ...</span>
+<span class="k">\inputencoding</span><span class="nb">{</span>utf8<span class="nb">}</span>
+<span class="c">% Back to the UTF-8 encoding.</span>
+<span class="c">% ...</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <h3><span class="mw-headline" id="Extending_the_support">Extending the support</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=2" title="Edit section: Extending the support">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+                        <p>The LaTeX support of UTF-8 is fairly specific: it includes only a limited range of unicode input characters. It only defines those symbols that are known to be available with the current <i>font encoding</i>. You might encounter a situation where using UTF-8 might result in error:
+                        </p>
+                        <pre>! Package inputenc Error: Unicode char \u8:ũ not set up for use with LaTeX.
+                        </pre>
+                        <p>This is due to the utf8 definition not necessarily having a mapping of all the character glyphs you are able to enter on your keyboard. Such characters are for example 
+                        </p>
+                        <pre>ŷ Ŷ ũ Ũ ẽ Ẽ ĩ Ĩ
+                        </pre>
+                        <p>In such case, you may try need to use the <span style="font-family: monospace; color: #C08020; font-weight: normal;">utf8x</span> option to define more character combinations. <span style="font-family: monospace; color: #C08020; font-weight: normal;">utf8x</span> is not officially supported, but can be viable in some cases. However it might break up compatibility with some packages like <span style="font-family: monospace; color: #2020C0; font-weight: normal;">csquotes</span>.
+                        </p><p>Another possiblity is to stick with <span style="font-family: monospace; color: #C08020; font-weight: normal;">utf8</span> and to define the characters yourself. This is easy:
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\DeclareUnicodeCharacter</span><span class="nb">{</span>&#39;codepoint&#39;<span class="nb">}{</span>&#39;TeX sequence&#39;<span class="nb">}</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p>where <span style="font-family: monospace; color: #C08020; font-weight: normal;">codepoint</span> is the unicode codepoint of the desired character. <span style="font-family: monospace; color: #C08020; font-weight: normal;">TeX sequence</span> is what to print when the character matching the codepoint is met.
+                            You may find codepoints on this <a rel="nofollow" class="external text" href="http://www.unicode.org/charts/#symbols">site</a>. Codepoints are easy to find on the web.
+                            Example:
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\DeclareUnicodeCharacter</span><span class="nb">{</span>0177<span class="nb">}{</span><span class="k">\^</span>y<span class="nb">}</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p>Now inputting 'ŷ' will effectively print 'ŷ'.
+                        </p>
+                        <h2><span class="mw-headline" id="Escaped_codes">Escaped codes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=3" title="Edit section: Escaped codes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                        <p>In addition to direct UTF-8 input, LaTeX supports the composition of special characters. This is convenient if your keyboard lacks some desired accents and other diacritics.
+                        </p><p>The following accents may be placed on letters. Although 'o' letter is used in most of the examples, the accents may be placed on any letter. Accents may even be placed above a "missing" letter; for example, <code class="mw-highlight" dir="ltr"><span class="k">\~</span><span class="nb">{}</span></code> produces a tilde over a blank space.
+                        </p><p>The following commands may be used only in paragraph (default) or LR (left-right) mode.
+                        </p>
+                        <table class="wikitable">
+                            <tbody><tr>
+                                    <th>LaTeX command
+                                    </th>
+                                    <th>Sample
+                                    </th>
+                                    <th>Description
+                                    </th></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\`</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td>ò</td>
+                                    <td>grave accent
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\&#39;</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td>ó</td>
+                                    <td>acute accent
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\^</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td>ô</td>
+                                    <td>circumflex
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\&quot;</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td>ö</td>
+                                    <td>umlaut, trema or dieresis
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\H</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td>ő</td>
+                                    <td>long Hungarian umlaut (double acute)
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\~</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td>õ</td>
+                                    <td>tilde
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\c</span><span class="nb">{</span>c<span class="nb">}</span></code></td>
+                                    <td>ç</td>
+                                    <td>cedilla
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\k</span><span class="nb">{</span>a<span class="nb">}</span></code></td>
+                                    <td>ą</td>
+                                    <td>ogonek
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\l</span><span class="nb">{}</span></code></td>
+                                    <td>ł</td>
+                                    <td>barred l (l with stroke)
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\=</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td>ō</td>
+                                    <td>macron accent (a bar over the letter)
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\b</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td><u>o</u></td>
+                                    <td>bar under the letter
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\.</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td>ȯ</td>
+                                    <td>dot over the letter
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\d</span><span class="nb">{</span>u<span class="nb">}</span></code></td>
+                                    <td>ụ</td>
+                                    <td>dot under the letter
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\r</span><span class="nb">{</span>a<span class="nb">}</span></code></td>
+                                    <td>å</td>
+                                    <td>ring over the letter (for å there is also the special command <code class="mw-highlight" dir="ltr"><span class="k">\aa</span></code>)
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\u</span><span class="nb">{</span>o<span class="nb">}</span></code></td>
+                                    <td>ŏ</td>
+                                    <td>breve over the letter
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\v</span><span class="nb">{</span>s<span class="nb">}</span></code></td>
+                                    <td>š</td>
+                                    <td>caron/háček ("v") over the letter
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\t</span><span class="nb">{</span>oo<span class="nb">}</span></code></td>
+                                    <td>o&#865;o</td>
+                                    <td>"tie" (inverted u) over the two letters
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\o</span></code></td>
+                                    <td>ø</td>
+                                    <td>slashed o (o with stroke)
+                                    </td></tr></tbody></table>
+                        <p>To place a diacritic on top of an i or a j, its dot has to be removed. The dotless version of these letters is accomplished by typing <code class="mw-highlight" dir="ltr"><span class="k">\i</span></code> and <code class="mw-highlight" dir="ltr"><span class="k">\j</span></code>. For example:
+                        </p>
+                        <ul><li><code class="mw-highlight" dir="ltr"><span class="k">\^</span><span class="nb">{</span><span class="k">\i</span><span class="nb">}</span></code> should be used for i circumflex 'î';</li>
+                            <li><code class="mw-highlight" dir="ltr"><span class="k">\&quot;</span><span class="nb">{</span><span class="k">\i</span><span class="nb">}</span></code> should be used for i umlaut 'ï'.</li></ul>
+                        <p>If a document is to be written completely in a language that requires particular diacritics several times, then using the right configuration allows those characters to be written directly in the document. For example, to achieve easier coding of umlauts, the babel package can be configured as <code class="mw-highlight" dir="ltr"><span class="k">\usepackage</span><span class="na">[german]</span><span class="nb">{</span>babel<span class="nb">}</span></code>. This provides the short hand <code class="mw-highlight" dir="ltr">&quot;o</code> for <code class="mw-highlight" dir="ltr"><span class="k">\&quot;</span>o</code>. This is very useful if one needs to use some text accents in a label, since no backslash will be accepted otherwise.
+                        </p><p>More information regarding language configuration can be found in the <a href="/wiki/LaTeX/Internationalization" title="LaTeX/Internationalization">Internationalization</a> section.
+                        </p>
+                        <h2><span id="Less_than_.3C_and_greater_than_.3E"></span><span class="mw-headline" ><i>Less than &lt;</i> and <i>greater than &gt;</i></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=4" title="Edit section: Less than &lt; and greater than &gt;">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                        <p>The two symbols '&lt;' and '&gt;' are actually ASCII characters, but you may have noticed that they will print '¡' and '¿' respectively. This is a font encoding issue. If you want them to print their real symbol, you will have to use another font encoding such as T1, loaded with the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">fontenc</span> package. See <a href="/wiki/LaTeX/Fonts" title="LaTeX/Fonts">Fonts</a> for more details on font encoding.
+                        </p><p>Alternatively, they can be printed with dedicated commands:
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\textless</span>
+<span class="k">\textgreater</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <h2><span id="Euro_.E2.82.AC_currency_symbol"></span><span class="mw-headline" id="Euro_€_currency_symbol"><font id="Euro">Euro <big>€</big> currency symbol</font></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=5" title="Edit section: Euro € currency symbol">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                        <p>When writing about money these days, you need the <a href="https://en.wikipedia.org/wiki/euro_sign" class="extiw" title="w:euro sign">euro sign</a>.
+                            The <span style="font-family: monospace; color: #2020C0; font-weight: normal;">textcomp</span> package features a <code class="mw-highlight" dir="ltr"><span class="k">\texteuro</span></code> command which gives you the euro symbol as supplied by your current text font. Depending on your chosen font this may be quite far from the official symbol.
+                        </p><p>An official version of the euro symbol is provided by <span style="font-family: monospace; color: #2020C0; font-weight: normal;">eurosym</span>. Load it in the preamble (optionally with the <span style="font-family: monospace; color: #C08020; font-weight: normal;">official</span> option):
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="na">[official]</span><span class="nb">{</span>eurosym<span class="nb">}</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p>then you can insert it with the <code class="mw-highlight" dir="ltr"><span class="k">\euro</span><span class="nb">{}</span></code> command. Finally, if you want a euro symbol that matches with the current font style (e.g., bold, italics, etc.) you can use a different option:
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="na">[gen]</span><span class="nb">{</span>eurosym<span class="nb">}</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p>again you can insert the euro symbol with <code class="mw-highlight" dir="ltr"><span class="k">\euro</span><span class="nb">{}</span></code>.
+                        </p><p>Alternatively you can use the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">marvosym</span> package which also provides the official euro symbol.
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>marvosym<span class="nb">}</span>
+<span class="c">% ...</span>
+
+<span class="k">\EUR</span><span class="nb">{}</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p>Now that you have succeeded in printing a euro sign, you may want the '€' on your keyboard to actually print the euro sign as above.
+                            There is a simple method to do that. You must make sure you are using UTF-8 encoding along with a working <code class="mw-highlight" dir="ltr"><span class="k">\euro</span><span class="nb">{}</span></code> or <code class="mw-highlight" dir="ltr"><span class="k">\EUR</span><span class="nb">{}</span></code>command.
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\DeclareUnicodeCharacter</span><span class="nb">{</span>20AC<span class="nb">}{</span><span class="k">\euro</span><span class="nb">{}}</span>
+<span class="c">% or</span>
+<span class="k">\DeclareUnicodeCharacter</span><span class="nb">{</span>20AC<span class="nb">}{</span><span class="k">\EUR</span><span class="nb">{}}</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p>Complete example:
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>marvosym<span class="nb">}</span>
+<span class="k">\DeclareUnicodeCharacter</span><span class="nb">{</span>20AC<span class="nb">}{</span><span class="k">\EUR</span><span class="nb">{}}</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <h2><span class="mw-headline" id="Degree_symbol_for_temperature_and_math">Degree symbol for temperature and math</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=6" title="Edit section: Degree symbol for temperature and math">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                        <p>The easiest way to print temperature and angle values is to use the <code class="mw-highlight" dir="ltr"><span class="k">\SI</span><span class="nb">{</span>value<span class="nb">}{</span>unit<span class="nb">}</span></code> command from the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">siunitx</span> package, which works both in text and math mode:
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>siunitx<span class="nb">}</span>
+<span class="c">%...</span>
+
+A <span class="s">$</span><span class="nv">\SI</span><span class="nb">{</span><span class="m">45</span><span class="nb">}{</span><span class="nv">\degree</span><span class="nb">}</span><span class="s">$</span> angle.
+
+It is <span class="k">\SI</span><span class="nb">{</span>17<span class="nb">}{</span><span class="k">\degreeCelsius</span><span class="nb">}</span> outside.
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p>For more information, see the <a rel="nofollow" class="external text" href="http://ctan.org/pkg/siunitx">documentation of the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">siunitx</span> package</a>.
+                        </p><p>A common mistake is to use the <code class="mw-highlight" dir="ltr"><span class="k">\circ</span></code> command. It will not print the correct character (though <code class="mw-highlight" dir="ltr"><span class="s">$</span><span class="nb">^</span><span class="nv">\circ</span><span class="s">$</span></code> will). Use the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">textcomp</span> package instead, which provides a <code class="mw-highlight" dir="ltr"><span class="k">\textdegree</span></code> command.
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>textcomp<span class="nb">}</span>
+<span class="c">%...</span>
+
+A <span class="s">$</span><span class="m">45</span><span class="s">$</span><span class="k">\textdegree</span> angle.
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p>For temperature, you can use the same command or opt for the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">gensymb</span> package and write
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>gensymb<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>textcomp<span class="nb">}</span>
+<span class="c">%...</span>
+
+17<span class="k">\,\celsius</span> <span class="c">% best (with textcomp)</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <p>Some keyboard layouts feature the degree symbol, you can use it directly if you are using UTF-8 and <span style="font-family: monospace; color: #2020C0; font-weight: normal;">textcomp</span>. For better results (font quality) we recommend the use of an appropriate font, like <span style="font-family: monospace; color: #2020C0; font-weight: normal;">lmodern</span>:
+                        </p>
+                        <table style="margin-top: 1.5em; margin-bottom: 1.5em">
+
+                            <tbody><tr>
+                                    <td style="padding-left:3em;">
+                                        <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>lmodern<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>textcomp<span class="nb">}</span>
+
+<span class="c">% ...</span>
+
+17<span class="k">\,</span>°C
+
+17<span class="k">\,</span>℃ <span class="c">% best</span>
+                                            </pre></div>
+                                    </td></tr></tbody></table>
+                        <h2><span class="mw-headline" id="Other_symbols">Other symbols</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=7" title="Edit section: Other symbols">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                        <p>LaTeX has many symbols at its disposal. The majority of them are within the mathematical domain, and later chapters will cover how to get access to them. For the more common text symbols, use the following commands:
+                        </p>
+                        <table class="wikitable">
+                            <tbody><tr>
+                                    <th>Command
+                                    </th>
+                                    <th>Sample
+                                    </th>
+                                    <th>Character
+                                    </th></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\%</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \%}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mi mathvariant="normal">&#x0025;<!-- % --></mi>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \%}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e5a85b333ac4e07604aff5d6d89bba8c2341802b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.936ex; height:2.343ex;" alt="\%"/></span>
+                                    </td>
+                                    <td>%
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\$</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \$}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mi mathvariant="normal">&#x0024;<!-- $ --></mi>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \$}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b45bd61b105e2d58791e154ad4c3df8fb034841b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.162ex; height:2.343ex;" alt="\$"/></span>
+                                    </td>
+                                    <td>$
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\{</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \{}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mo fence="false" stretchy="false">{</mo>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \{}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1288432dfd9ce5f65857a9e6bbf0d4876b403d2" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:1.162ex; height:2.843ex;" alt="\{"/></span>
+                                    </td>
+                                    <td>{
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\_</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \_}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mi mathvariant="normal">&#x005F;<!-- _ --></mi>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \_}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/607511f7dad0a129c99d2d8880f191ad96e3d592" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; margin-top: -0.227ex; width:1.162ex; height:0.509ex;" alt="\_"/></span>
+                                    </td>
+                                    <td>_
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\P</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \P }">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mo>&#xB6;</mo>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \P }</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d6e7a47a41d1732b50368b4c2e8087ed94eec8f0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.171ex; width:1.417ex; height:3.343ex;" alt="\P "/></span>
+                                    </td>
+                                    <td>¶
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\ddag</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>‡
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textbar</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>|
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textgreater</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle &gt;}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mo>&gt;</mo>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle &gt;}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1b27b77ab4e3293ea9ce65cef60fea655c398423" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.808ex; height:1.843ex;" alt="&gt;"/></span>
+                                    </td>
+                                    <td>&gt;
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textendash</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>–
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\texttrademark</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>™
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textexclamdown</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>¡
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textsuperscript</span><span class="nb">{</span>a<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathrm {X^{a}} }">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <msup>
+                                                <mi mathvariant="normal">X</mi>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mi mathvariant="normal">a</mi>
+                                                </mrow>
+                                                </msup>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \mathrm {X^{a}} }</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/67d507f7ceb51c47ca96868a57551b053d76c8b0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.797ex; height:2.343ex;" alt="{\mathrm  {X^{{a}}}}"/></span>
+                                    </td>
+                                    <td><sup>a</sup>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\pounds</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>£
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\#</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \#}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mi mathvariant="normal">&#x0023;<!-- # --></mi>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \#}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f72e8254fd59fa4060c66c9310acbaf6df2ce894" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:1.936ex; height:2.509ex;" alt="\#"/></span>
+                                    </td>
+                                    <td>#
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\&amp;</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \&amp;}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mi mathvariant="normal">&#x0026;<!-- & --></mi>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \&amp;}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bf7e8142574f96000e13827167bdfdd69e38076f" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.808ex; height:2.176ex;" alt="\&amp;"/></span>
+                                    </td>
+                                    <td>&amp;
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mo fence="false" stretchy="false">}</mo>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2cf208e5d370391e66767f13641bd5ee6ad93825" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:1.162ex; height:2.843ex;" alt="\}"/></span>
+                                    </td>
+                                    <td>}
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\S</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \S }">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mi mathvariant="normal">&#x00A7;<!-- § --></mi>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle \S }</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/20b4894f6444c219b0bde64c78d036d7bae52637" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.171ex; width:1.417ex; height:3.343ex;" alt="\S "/></span>
+                                    </td>
+                                    <td>§
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\dag</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>†
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textbackslash</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>\
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textless</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle &lt;}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mo>&lt;</mo>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle &lt;}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/33737c89a17785dacc8638b4d66db3d5c8670de1" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.808ex; height:1.843ex;" alt="&lt;"/></span>
+                                    </td>
+                                    <td>&lt;
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textemdash</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>—
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textregistered</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>®
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textquestiondown</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>¿
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\textcircled</span><span class="nb">{</span>a<span class="nb">}</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>ⓐ
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\copyright</span></code>
+                                    </td>
+                                    <td>n/a
+                                    </td>
+                                    <td>©
+                                    </td></tr></tbody></table>
+                        <p>Not mentioned in above table, tilde (~) is used in LaTeX code to produce <a href="/wiki/LaTeX/Text_Formatting#Non-breaking_spaces" title="LaTeX/Text Formatting">non-breakable space</a>. To get printed tilde sign, either write <code class="mw-highlight" dir="ltr"><span class="k">\~</span><span class="nb">{}</span></code> or <code class="mw-highlight" dir="ltr"><span class="k">\textasciitilde</span><span class="nb">{}</span></code>. 
+                            And a visible space <span style="font-size:150%;">␣</span> can be created with <code class="mw-highlight" dir="ltr"><span class="k">\textvisiblespace</span></code>.
+                        </p><p>For some more interesting symbols, the Postscript ZapfDingbats font is available thanks to the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">pifont</span> package. Add the declaration to your preamble: <code class="mw-highlight" dir="ltr"><span class="k">\usepackage</span><span class="nb">{</span>pifont<span class="nb">}</span></code>. Next, the command <code class="mw-highlight" dir="ltr"><span class="k">\ding</span><span class="nb">{</span>number<span class="nb">}</span></code>, will print the specified symbol. Here is a table of the available symbols:
+                        </p><p><a href="/wiki/File:LaTeX-dingbats.png" class="image" title="ZapfDingbats symbols"><img alt="ZapfDingbats symbols" src="//upload.wikimedia.org/wikipedia/commons/5/56/LaTeX-dingbats.png" width="616" height="454" data-file-width="616" data-file-height="454" /></a>.
+                        </p>
+                        <h2><span class="mw-headline" id="In_special_environments">In special environments</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=8" title="Edit section: In special environments">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                        <h3><span class="mw-headline" id="Math_mode">Math mode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=9" title="Edit section: Math mode">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+                        <p>Several of the above and some similar accents can also be produced in math mode. The following commands may be used only in math mode.
+                        </p>
+                        <table class="wikitable">
+                            <tbody><tr>
+                                    <th>LaTeX command
+                                    </th>
+                                    <th>Sample
+                                    </th>
+                                    <th>Description
+                                    </th>
+                                    <th>Text-mode equivalence
+                                    </th></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\hat</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\hat {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo stretchy="false">&#x005E;<!-- ^ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\hat {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1b295806edcacca7a1a28fceb6ef9aa231462446" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.292ex; height:2.176ex;" alt="\hat{o}"/></span>
+                                    </td>
+                                    <td>circumflex
+                                    </td>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\^</span></code>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\widehat</span><span class="nb">{</span>oo<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\widehat {oo}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mrow>
+                                                <mi>o</mi>
+                                                <mi>o</mi>
+                                                </mrow>
+                                                <mo>&#x005E;<!-- ^ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\widehat {oo}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/529ebecb1fd42f3925fa1df57ff511d419fa1a5a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.028ex; margin-left: -0.01ex; margin-right: -0.009ex; margin-bottom: -0.31ex; width:2.343ex; height:2.343ex;" alt="\widehat{oo}"/></span>
+                                    </td>
+                                    <td>wide version of <code class="mw-highlight" dir="ltr"><span class="k">\hat</span></code> over several letters
+                                    </td>
+                                    <td>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\check</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\check {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo stretchy="false">&#x02C7;<!-- ˇ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\check {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cc496097e4366d670f30afcd8c186656843c38b4" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.292ex; height:2.176ex;" alt="\check{o}"/></span>
+                                    </td>
+                                    <td>vee or check
+                                    </td>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\v</span></code>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\tilde</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\tilde {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo stretchy="false">&#x007E;<!-- ~ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\tilde {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c204684c345609a5985599bb3961a82744a19023" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.292ex; height:2.176ex;" alt="\tilde{o}"/></span>
+                                    </td>
+                                    <td>tilde
+                                    </td>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\~</span></code>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\widetilde</span><span class="nb">{</span>oo<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\widetilde {oo}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mrow>
+                                                <mi>o</mi>
+                                                <mi>o</mi>
+                                                </mrow>
+                                                <mo>&#x007E;<!-- ~ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\widetilde {oo}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2c81e33cc6c3294c0ac3672c742af8a18c92c56d" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.028ex; margin-bottom: -0.31ex; width:2.324ex; height:2.176ex;" alt="\widetilde{oo}"/></span>
+                                    </td>
+                                    <td>wide version of <code class="mw-highlight" dir="ltr"><span class="k">\tilde</span></code> over several letters
+                                    </td>
+                                    <td>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\acute</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\acute {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo>&#x00B4;<!-- ´ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\acute {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/05c4211a50c197269307f86176d37b3989a435c5" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.292ex; height:2.343ex;" alt="\acute{o}"/></span>
+                                    </td>
+                                    <td>acute accent
+                                    </td>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\&#39;</span></code>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\grave</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\grave {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo>&#x0060;<!-- ` --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\grave {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/166a85a01d390d3828136c7ef1f8bc966988d51e" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.292ex; height:2.343ex;" alt="\grave{o}"/></span>
+                                    </td>
+                                    <td>grave accent
+                                    </td>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\`</span></code>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\dot</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\dot {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo>&#x02D9;<!-- ˙ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\dot {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/eb91a1eca67311421c5303ec627903cb574d6760" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.292ex; height:2.176ex;" alt="\dot{o}"/></span>
+                                    </td>
+                                    <td>dot over the letter
+                                    </td>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\.</span></code>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\ddot</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\ddot {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo>&#x00A8;<!-- ¨ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\ddot {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6948251d5b7ac0f726095bd71d7b0096ce1fe704" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.292ex; height:2.176ex;" alt="\ddot{o}"/></span>
+                                    </td>
+                                    <td>two dots over the letter (umlaut in text-mode)
+                                    </td>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\&quot;</span></code>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\breve</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\breve {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo>&#x02D8;<!-- ˘ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\breve {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2afcd39f7276156e6d11c3c959498b6b7b8c0593" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.292ex; height:2.343ex;" alt="\breve{o}"/></span>
+                                    </td>
+                                    <td>breve
+                                    </td>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\u</span></code>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\bar</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\bar {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo stretchy="false">&#x00AF;<!-- ¯ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\bar {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5d7cd60bbe4b4c5549ff07099af463bd8d7fc1eb" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.292ex; height:2.009ex;" alt="\bar{o}"/></span>
+                                    </td>
+                                    <td>macron
+                                    </td>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\=</span></code>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\vec</span><span class="nb">{</span>o<span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\vec {o}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>o</mi>
+                                                <mo stretchy="false">&#x2192;<!-- → --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\vec {o}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/28cff7d221fb9f93996cfb6d9cd63a25490522c0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.24ex; height:2.343ex;" alt="\vec{o}"/></span>
+                                    </td>
+                                    <td>vector (arrow) over the letter
+                                    </td>
+                                    <td>
+                                    </td></tr></tbody></table>
+                        <p>When applying accents to letters <code class="mw-highlight" dir="ltr">i</code> and <code class="mw-highlight" dir="ltr">j</code>, you can use <code class="mw-highlight" dir="ltr"><span class="k">\imath</span></code> and <code class="mw-highlight" dir="ltr"><span class="k">\jmath</span></code> to keep the dots from interfering with the accents:
+                        </p>
+                        <table class="wikitable">
+                            <tbody><tr>
+                                    <th>LaTeX command
+                                    </th>
+                                    <th>Sample
+                                    </th>
+                                    <th>Description
+                                    </th>
+                                    <th>Sample with upper dot
+                                    </th></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\hat</span><span class="nb">{</span><span class="k">\imath</span><span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\hat {\imath }}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>&#x0131;<!-- ı --></mi>
+                                                <mo stretchy="false">&#x005E;<!-- ^ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\hat {\imath }}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/592031f3cac3bf06f2046337272c514d91251658" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.214ex; height:2.176ex;" alt="\hat{\imath}"/></span>
+                                    </td>
+                                    <td>circumflex on letter <code class="mw-highlight" dir="ltr">i</code> without upper dot
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\hat {i}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>i</mi>
+                                                <mo stretchy="false">&#x005E;<!-- ^ --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\hat {i}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cd413507d7fc526479705712bd81de4cf7953989" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.162ex; height:2.843ex;" alt="\hat{i}"/></span>
+                                    </td></tr>
+                                <tr>
+                                    <td><code class="mw-highlight" dir="ltr"><span class="k">\vec</span><span class="nb">{</span><span class="k">\jmath</span><span class="nb">}</span></code>
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\vec {\jmath }}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>&#x0237;<!-- ȷ --></mi>
+                                                <mo stretchy="false">&#x2192;<!-- → --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\vec {\jmath }}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/717dbba96b60cf0173a6e5162c619c62b5e4c526" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:1.094ex; height:2.676ex;" alt="\vec{\jmath}"/></span>
+                                    </td>
+                                    <td>vector (arrow) on letter <code class="mw-highlight" dir="ltr">j</code> without upper dot
+                                    </td>
+                                    <td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\vec {j}}}">
+                                                <semantics>
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mstyle displaystyle="true" scriptlevel="0">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mrow class="MJX-TeXAtom-ORD">
+                                                <mover>
+                                                <mi>j</mi>
+                                                <mo stretchy="false">&#x2192;<!-- → --></mo>
+                                                </mover>
+                                                </mrow>
+                                                </mrow>
+                                                </mstyle>
+                                                </mrow>
+                                                <annotation encoding="application/x-tex">{\displaystyle {\vec {j}}}</annotation>
+                                                </semantics>
+                                                </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8ce1ed1de8493f7cc7d856ca5427cf311b1597f1" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:1.094ex; height:3.176ex;" alt="\vec{j}"/></span>
+                                    </td></tr></tbody></table>
+                        <h3><span class="mw-headline" id="Tabbing_environment">Tabbing environment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=10" title="Edit section: Tabbing environment">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+                        <p>Some of the accent marks used in running text have other uses in the tabbing environment. In that case they can be created with the following command:
+                        </p>
+                        <ul><li><code class="mw-highlight" dir="ltr"><span class="k">\a</span>&#39;</code> for an acute accent</li>
+                            <li><code class="mw-highlight" dir="ltr"><span class="k">\a</span>`</code> for a grave accent</li>
+                            <li><code class="mw-highlight" dir="ltr"><span class="k">\a</span>=</code> for a macron accent</li></ul>
+                        <h2><span class="mw-headline" id="Unicode_keyboard_input">Unicode keyboard input</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=11" title="Edit section: Unicode keyboard input">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                        <table class="plainlinks noprint messagebox notice" style="width:250px; float:right; clear:right; margin:0px; margin-left:10px;">  
+                            <tbody><tr style="vertical-align:middle;"><td style="padding:0.1em; text-align:center; vertical-align:middle; width:45px; border:none;">
+                                        <img alt="Wikipedia-logo.png" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/63/Wikipedia-logo.png/40px-Wikipedia-logo.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/63/Wikipedia-logo.png/60px-Wikipedia-logo.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/63/Wikipedia-logo.png/80px-Wikipedia-logo.png 2x" data-file-width="200" data-file-height="200" /></td>
+                                    <td style="color:black; text-align:left; vertical-align:middle; padding:0.5em; padding-left:0em; border:none;">
+                                        <p><a href="https://en.wikipedia.org/wiki/" class="extiw" title="w:">Wikipedia</a> has related information at <a class="external text" href="//en.wikipedia.org/wiki/Unicode_input"><i><b>Unicode input</b></i></a>
+                                        </p>
+                                    </td></tr></tbody></table>
+                        <p>Some operating systems provide a keyboard combination to input any Unicode code point, the so-called <i>unicode compose key</i>.
+                        </p><p>Many X applications (*BSD and GNU/Linux) support the <tt>Ctrl+Shift+u</tt> combination. A '<u>u</u>' symbol should appear. Type the code point and press <tt>enter</tt> or <tt>space</tt> to actually print the character.
+                        Example:
+                        </p>
+                        <pre>&lt;Ctrl+Shift+u&gt; 20AC &lt;space&gt;
+                        </pre>
+                        <p>will print the euro character.
+                        </p><p>Desktop environments like GNOME and KDE may feature a customizable compose key for more memorizable sequences.
+                        </p><p>Xorg features advanced keyboard layouts with variants that let you enter a lot of characters easily with combination using the aprioriate modifier, like <tt>Alt Gr</tt>. It highly depends on the selected layout+variant, so we suggest you to play a bit with your keyboard, preceeding every key and dead key with the <tt>Alt Gr</tt> modifier.
+                    </p><p>In Windows, you can hold <tt>Alt</tt> and type a <tt>&lt;codepoint&gt;</tt> to get a desired character. For example,
+                </p>
+                <pre>&lt;Alt&gt; + 0252
+                </pre>
+                <p>will print the German letter ü.
+                </p>
+                <h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=12" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                <ul><li><a rel="nofollow" class="external text" href="http://spectroscopy.mps.ohio-state.edu/symposium_53/latexinstruct.html">A few other LaTeX accents and symbols</a></li>
+                    <li><a rel="nofollow" class="external text" href="http://www.giss.nasa.gov/tools/latex/ltx-401.html">NASA GISS: Accents</a></li>
+                    <li><a rel="nofollow" class="external text" href="ftp://sunsite.icm.edu.pl/pub/CTAN/info/symbols/comprehensive/symbols-a4.pdf">The Comprehensive LATEX Symbol List</a></li>
+                    <li><a rel="nofollow" class="external text" href="//www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf">PDF document with a lengthy list of symbols provided by various packages</a></li>
+                    <li><a rel="nofollow" class="external text" href="http://detexify.kirelabs.org/classify.html">Search LaTeX symbols by drawing them</a></li></ul>
+                <h2><span class="mw-headline" id="Notes_and_References">Notes and References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit&amp;section=13" title="Edit section: Notes and References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                <div class="reflist references" style="">
+                    <ol class="references">
+                        <li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">For a detailed information on the package, see  <a rel="nofollow" class="external text" href="https://www.tug.org/texmf-dist/doc/latex/base/inputenc.pdf">complete specifications written by the package's authors</a>.</span>
+                        </li>
+                    </ol></div>
+                <p><br />
+                </p>
+                <table width="100%" cellspacing="0" cellpadding="2" style="border: 1px solid black;" class="noprint">
+                    <tbody><tr>
+                            <td width="33%" bgcolor="#ffffe0"><a href="/wiki/LaTeX/List_Structures" title="LaTeX/List Structures">Previous: List Structures</a>
+                            </td>
+                            <td width="33%" bgcolor="#ffffe0" align="center"><a href="/wiki/LaTeX" title="LaTeX">Index</a>
+                            </td>
+                            <td width="33%" bgcolor="#ffffe0" align="right"><a href="/wiki/LaTeX/Internationalization" title="LaTeX/Internationalization">Next: Internationalization</a>
+                            </td></tr></tbody></table>
+
+                <!-- 
+                NewPP limit report
+                Parsed by mw1275
+                Cached time: 20181210163832
+                Cache expiry: 1900800
+                Dynamic content: false
+                CPU time usage: 0.884 seconds
+                Real time usage: 1.090 seconds
+                Preprocessor visited node count: 15032/1000000
+                Preprocessor generated node count: 0/1500000
+                Post‐expand include size: 80678/2097152 bytes
+                Template argument size: 47305/2097152 bytes
+                Highest expansion depth: 11/40
+                Expensive parser function count: 0/500
+                Unstrip recursion depth: 0/20
+                Unstrip post‐expand size: 16864/5000000 bytes
+                Number of Wikibase entities loaded: 0/400
+                Lua time usage: 0.614/10.000 seconds
+                Lua memory usage: 2.27 MB/50 MB
+                -->
+                <!--
+                Transclusion expansion time report (%,ms,calls,template)
+                100.00%  855.038      1 -total
+                 80.61%  689.214    117 Template:BookCat
+                 73.70%  630.178    101 Template:LaTeX/LaTeX
+                 42.08%  359.837    117 Template:Evalx
+                 10.33%   88.349     14 Template:LaTeX/Usage
+                  7.30%   62.403      1 Template:LaTeX/Top
+                  2.71%   23.195      2 Template:Mbox
+                  2.57%   21.949      1 Template:Info
+                  2.48%   21.193    117 Template:BOOKCATEGORY
+                  1.85%   15.855      1 Template:LaTeX/Contents
+                -->
+
+                <!-- Saved in parser cache with key enwikibooks:pcache:idhash:174110-0!canonical!math=5 and timestamp 20181210163831 and revision id 3500425
+                -->
+            </div><noscript><img src="//en.wikibooks.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+            Retrieved from "<a dir="ltr" href="https://en.wikibooks.org/w/index.php?title=LaTeX/Special_Characters&amp;oldid=3500425">https://en.wikibooks.org/w/index.php?title=LaTeX/Special_Characters&amp;oldid=3500425</a>"					</div>
+        <div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/wiki/Category:Book:LaTeX" title="Category:Book:LaTeX">Book:LaTeX</a></li></ul></div></div>				<div class="visualClear"></div>
+    </div>
+</div>
+<div id="mw-navigation">
+    <h2>Navigation menu</h2>
+    <div id="mw-head">
+        <div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+            <h3 id="p-personal-label">Personal tools</h3>
+            <ul>
+                <li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Discussion for this IP address</a></li><li id="pt-anoncontribs"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=LaTeX%2FSpecial+Characters" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=LaTeX%2FSpecial+Characters" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+        </div>
+        <div id="left-navigation">
+            <div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+                <h3 id="p-namespaces-label">Namespaces</h3>
+                <ul>
+                    <li id="ca-nstab-main" class="selected"><span><a href="/wiki/LaTeX/Special_Characters" title="View the content page [c]" accesskey="c">Book</a></span></li><li id="ca-talk"><span><a href="/wiki/Talk:LaTeX/Special_Characters" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>						</ul>
+            </div>
+            <div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+                <input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+                <h3 id="p-variants-label">
+                    <span>Variants</span>
+                </h3>
+                <ul class="menu">
+                </ul>
+            </div>
+        </div>
+        <div id="right-navigation">
+            <div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+                <h3 id="p-views-label">Views</h3>
+                <ul>
+                    <li id="ca-view" class="collapsible selected"><span><a href="/wiki/LaTeX/Special_Characters">Read</a></span></li><li id="ca-edit" class="collapsible"><span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=edit" title="Edit this page [e]" accesskey="e">Edit</a></span></li><li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>						</ul>
+            </div>
+            <div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+                <input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+                <h3 id="p-cactions-label"><span>More</span></h3>
+                <ul class="menu">
+                </ul>
+            </div>
+            <div id="p-search" role="search">
+                <h3>
+                    <label for="searchInput">Search</label>
+                </h3>
+                <form action="/w/index.php" id="searchform">
+                    <div id="simpleSearch">
+                        <input type="search" name="search" placeholder="Search Wikibooks" title="Search Wikibooks [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="mw-panel">
+        <div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+        <div class="portal" role="navigation" id="p-Navigation" aria-labelledby="p-Navigation-label">
+            <h3 id="p-Navigation-label">Navigation</h3>
+            <div class="body">
+                <ul>
+                    <li id="n-mainpage"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main Page</a></li><li id="n-help"><a href="/wiki/Help:Contents" title="Find help on how to use and edit Wikibooks">Help</a></li><li id="n-Browse"><a href="/wiki/Wikibooks:Card_Catalog_Office" title="Check out what Wikibooks has to offer">Browse</a></li><li id="n-Cookbook"><a href="/wiki/Cookbook:Table_of_Contents" title="Learn recipes from around the world">Cookbook</a></li><li id="n-Wikijunior"><a href="/wiki/Wikijunior" title="Books for children">Wikijunior</a></li><li id="n-Featured-books"><a href="/wiki/Wikibooks:Featured_books" title="The best of Wikibooks">Featured books</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikibooks.org&amp;uselang=en" title="Support Wikibooks">Donations</a></li><li id="n-randomrootpage"><a href="/wiki/Special:RandomInCategory/Book:Wikibooks_Stacks/Books">Random book</a></li><li id="n-Using-Wikibooks"><a href="/wiki/Using_Wikibooks">Using Wikibooks</a></li>				</ul>
+            </div>
+        </div>
+        <div class="portal" role="navigation" id="p-Community" aria-labelledby="p-Community-label">
+            <h3 id="p-Community-label">Community</h3>
+            <div class="body">
+                <ul>
+                    <li id="n-Reading-room"><a href="/wiki/Wikibooks:Reading_room" title="Discuss Wikibooks-related questions and concerns with others">Reading room</a></li><li id="n-portal"><a href="/wiki/Wikibooks:Community_Portal" title="Find your way around the Wikibooks community">Community portal</a></li><li id="n-currentevents"><a href="/wiki/Wikibooks:Reading_room/Bulletin_Board" title="Important community news">Bulletin Board</a></li><li id="n-maintenance"><a href="/wiki/Wikibooks:Maintenance" title="Frequent tasks that you can help with">Help out!</a></li><li id="n-Policies-and-guidelines"><a href="/wiki/Wikibooks:Policies_and_guidelines" title="Pages detailing important rules and procedures">Policies and guidelines</a></li><li id="n-contact"><a href="/wiki/Wikibooks:Contact_us" title="Alternative methods of communication">Contact us</a></li>				</ul>
+            </div>
+        </div>
+        <div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+            <h3 id="p-tb-label">Tools</h3>
+            <div class="body">
+                <ul>
+                    <li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/LaTeX/Special_Characters" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/LaTeX/Special_Characters" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="//commons.wikimedia.org/wiki/Special:UploadWizard?uselang=en" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=LaTeX/Special_Characters&amp;oldid=3500425" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=LaTeX/Special_Characters&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=LaTeX%2FSpecial_Characters&amp;id=3500425" title="Information on how to cite this page">Cite this page</a></li>				</ul>
+            </div>
+        </div>
+        <div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label">
+            <h3 id="p-lang-label">In other languages</h3>
+            <div class="body">
+                <ul>
+                    <li class="interlanguage-link interwiki-sr"><a href="https://sr.wikibooks.org/wiki/LaTeX/%D0%9F%D0%BE%D1%81%D0%B5%D0%B1%D0%BD%D0%B8_%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%D0%B8" title="LaTeX/Посебни знакови – Serbian" lang="sr" hreflang="sr" class="interlanguage-link-target">Српски / srpski</a></li>				</ul>
+                <div class="after-portlet after-portlet-lang"><span class="wb-langlinks-add wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=LaTeX%2FSpecial+Characters" title="Add interlanguage links" class="wbc-editpage">Add links</a></span></div>			</div>
+        </div>
+        <div class="portal" role="navigation" id="p-Sister_projects" aria-labelledby="p-Sister_projects-label">
+            <h3 id="p-Sister_projects-label">Sister projects</h3>
+            <div class="body">
+                <ul>
+                    <li id="n-Wikipedia"><a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></li><li id="n-Wikiversity"><a href="https://en.wikiversity.org/wiki/Wikiversity:Main_Page">Wikiversity</a></li><li id="n-Wiktionary"><a href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page">Wiktionary</a></li><li id="n-Wikiquote"><a href="https://en.wikiquote.org/wiki/Main_Page">Wikiquote</a></li><li id="n-Wikisource"><a href="https://en.wikisource.org/wiki/Main_Page">Wikisource</a></li><li id="n-Wikinews"><a href="https://en.wikinews.org/wiki/Main_Page">Wikinews</a></li><li id="n-Wikivoyage"><a href="https://en.wikivoyage.org/wiki/Main_Page">Wikivoyage</a></li><li id="n-Commons"><a href="https://commons.wikimedia.org/wiki/Main_Page">Commons</a></li><li id="n-Wikidata"><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a></li>				</ul>
+            </div>
+        </div>
+        <div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+            <h3 id="p-coll-print_export-label">Print/export</h3>
+            <div class="body">
+                <ul>
+                    <li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=LaTeX%2FSpecial+Characters">Create a collection</a></li><li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:ElectronPdf&amp;page=LaTeX%2FSpecial+Characters&amp;action=show-download-screen">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=LaTeX/Special_Characters&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer" role="contentinfo">
+    <ul id="footer-info">
+        <li id="footer-info-lastmod"> This page was last edited on 10 December 2018, at 13:59.</li>
+        <li id="footer-info-copyright">Text is available under the <a href="//creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike License.</a>; additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy.</a></li>
+    </ul>
+    <ul id="footer-places">
+        <li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+        <li id="footer-places-about"><a href="/wiki/Wikibooks:Welcome" title="Wikibooks:Welcome">About Wikibooks</a></li>
+        <li id="footer-places-disclaimer"><a href="/wiki/Wikibooks:General_disclaimer" title="Wikibooks:General disclaimer">Disclaimers</a></li>
+        <li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+        <li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+        <li id="footer-places-mobileview"><a href="//en.m.wikibooks.org/w/index.php?title=LaTeX/Special_Characters&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+    </ul>
+    <ul id="footer-icons" class="noprint">
+        <li id="footer-copyrightico">
+            <a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>					</li>
+        <li id="footer-poweredbyico">
+            <a href="//www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>					</li>
+    </ul>
+    <div style="clear: both;"></div>
+
+    <script type="text/javascript" >
+        //principal();
+    </script>
+</div>
+
+</body>
+</html>
